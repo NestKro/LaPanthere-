@@ -6,6 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 a,
 button {
     transition: all .3s ease-in-out;
@@ -437,6 +438,7 @@ nav .caret {
 .mg-md {
     margin-top: 10px;
     margin-bottom: 20px;
+	 padding: 0 25px !important;
 }
 
 .mg-lg {
@@ -529,11 +531,7 @@ button {
     opacity: 1;
 }
 
-a[data-lightbox] {
-    position: relative;
-    display: block;
-    text-align: center;
-}
+
 
 a[data-lightbox]:hover::before {
     content: "+";
@@ -549,8 +547,12 @@ a[data-lightbox]:hover::before {
     z-index: 1;
     position: absolute;
     top: 50%;
+	 left: 50%;
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
 }
 
 a[data-lightbox]:hover img {
@@ -629,7 +631,7 @@ a[data-lightbox]:hover img {
 }
 
 .snapshot-lb .modal-body {
-    padding-bottom: 45px;
+    padding-bottom: 50%;
 }
 
 .snapshot-lb .lightbox-caption {
@@ -702,7 +704,71 @@ p {
     max-width: 400px;
     margin: auto auto auto auto;
 }
-
+/* Edited */
+html{
+	overflow-x: auto;
+}
+.social-block{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: none;
+}
+.social-flex{
+	display: flex;
+	justify-content: center;
+}
+.social-flex-wrapper{
+	max-width: 400px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.social-flex-wrapper > *{
+	flex: 0 1 25%;
+}
+@media (max-width:480px){
+	.social-flex-wrapper > *{
+		flex: 0 1 20%;
+	}
+}
+.social-block > :not(*:last-child){
+	margin-bottom: 10px;
+}
+.social-block > *{
+	flex: 0 1 50%;
+}
+.social__link{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin: 0 10px;
+	flex-wrap: nowrap;
+	justify-content: center;
+}
+.navbar-collapse.in{
+	overflow-x: hidden;
+}
+.social__link span{
+	margin-right: 15px;
+	flex: 0 0 25px;
+}
+.social-wrapper{
+	max-width: 400px;
+}
+a[data-lightbox] {
+	position: relative;
+	display: block;
+	text-align: center;
+	overflow:hidden;
+	padding-bottom: 100%;
+}
+@media (max-width: 479px){
+	a[data-lightbox]{
+		padding-bottom: 105%;
+	}
+}
+/* Edited END */
 h2 {
     font-size: 22px;
     line-height: 1.4em;
@@ -874,8 +940,8 @@ h4 {
         position: relative;
     }
     .bloc {
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
+        /* padding-left: constant(safe-area-inset-left);
+        padding-right: constant(safe-area-inset-right); */
     }
     .bloc-group,
     .bloc-group .bloc {
@@ -885,8 +951,8 @@ h4 {
     .bloc-fill-screen .fill-bloc-top-edge,
     .bloc-fill-screen .fill-bloc-bottom-edge {
         padding: 0 20px;
-        padding-left: constant(safe-area-inset-left);
-        padding-right: constant(safe-area-inset-right);
+        /* padding-left: constant(safe-area-inset-left);
+        padding-right: constant(safe-area-inset-right); */
     }
 }
 
